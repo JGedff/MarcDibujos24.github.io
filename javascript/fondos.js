@@ -1,8 +1,8 @@
 const fondos = {
     "doc": [
         {
-            "src": "./img/",
-            "title": "name",
+            "src": "./img/portada.jpg",
+            "title": "Fondo",
         },
         {
             "src": "./img/",
