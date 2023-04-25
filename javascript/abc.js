@@ -1,7 +1,7 @@
 const abc = {
     "doc": [
         {
-            "src": "./img/hax.png",
+            "src": "./img/",
             "title": "lokura",
         },
         {
