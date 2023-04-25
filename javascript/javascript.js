@@ -428,38 +428,3 @@ document.addEventListener("keydown", (click) => {
 document.getElementById('body').addEventListener("contextmenu", (event) => {
     event.preventDefault();
 });
-
-document.getElementById('ic1').addEventListener("mouseover", () => {
-    document.getElementById('ic1').style.width = "100%";
-    document.getElementById('ic2').style.width = "5%";
-    document.getElementById('ic3').style.width = "5%";
-    document.getElementById('ic4').style.width = "5%";
-});
-
-document.getElementById('ic2').addEventListener("mouseover", () => {
-    document.getElementById('ic2').style.width = "100%";
-    document.getElementById('ic1').style.width = "5%";
-    document.getElementById('ic3').style.width = "5%";
-    document.getElementById('ic4').style.width = "5%";
-});
-
-document.getElementById('ic3').addEventListener("mouseover", () => {
-    document.getElementById('ic3').style.width = "100%";
-    document.getElementById('ic1').style.width = "5%";
-    document.getElementById('ic2').style.width = "5%";
-    document.getElementById('ic4').style.width = "5%";
-});
-
-document.getElementById('ic4').addEventListener("mouseover", () => {
-    document.getElementById('ic4').style.width = "100%";
-    document.getElementById('ic1').style.width = "5%";
-    document.getElementById('ic2').style.width = "5%";
-    document.getElementById('ic3').style.width = "5%";
-});
-
-document.getElementById('customCarousel').addEventListener("mouseout", () => {
-    document.getElementById('ic1').style.width = "25%";
-    document.getElementById('ic2').style.width = "25%";
-    document.getElementById('ic3').style.width = "25%";
-    document.getElementById('ic4').style.width = "25%";
-});
