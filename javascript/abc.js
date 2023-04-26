@@ -108,5 +108,11 @@ const abc = {
             "src": "./img/Zola.jpg",
             "title": "Zola",
         },
+        /*
+        {
+            "src": "./img/",
+            "title": "name",
+        },
+        */
     ]
 }
