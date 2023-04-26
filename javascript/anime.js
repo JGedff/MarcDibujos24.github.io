@@ -6,7 +6,7 @@ const anime = {
         },
         {
             "src": "./img/Lawliet.jpg",
-            "title": "Lawliet.jpg",
+            "title": "Lawliet",
         },
         {
             "src": "./img/Detectiu Conan.jpg",
