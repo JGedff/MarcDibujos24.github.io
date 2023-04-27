@@ -5,8 +5,12 @@ li {
     justify-content: center;
 }
 
-h4 {
+h3 {
     margin-top: 50px;
+}
+
+h4 {
+    margin-top: 25px;
 }
 
 svg {
@@ -20,7 +24,7 @@ img {
 }
 
 main {
-    margin-top: 280px;
+    margin-top: 290px;
     padding: 15px;
 }
 
