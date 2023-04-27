@@ -1,4 +1,4 @@
-const dragonBall = { // https://www.instagram.com/stories/highlights/17894459623491747/
+const dragonBall = {
     "doc": [
         {
             "src": "./img/gokuSS4azul.jpg",
@@ -11,6 +11,34 @@ const dragonBall = { // https://www.instagram.com/stories/highlights/17894459623
         {
             "src": "./img/Gotenks.jpg",
             "title": "Gotenks",
+        },
+        {
+            "src": "./img/dragon_ball.jpeg",
+            "title": "Nuevas transformaciones",
+        },
+        {
+            "src": "./img/Gohan.jpeg",
+            "title": "Gohan niño",
+        },
+        {
+            "src": "./img/gohanFondo.jpeg",
+            "title": "Gohan",
+        },
+        {
+            "src": "./img/sayan.jpeg",
+            "title": "Saiyajin",
+        },
+        {
+            "src": "./img/Vegito_vegita.jpeg",
+            "title": "Vegito & Vegita",
+        },
+        {
+            "src": "./img/GranSaiyaman.jpeg",
+            "title": "Gran Saiyaman",
+        },
+        {
+            "src": "./img/gohanUltrainstinto.jpeg",
+            "title": "Gohan adulto con cola ultra instinto",
         },
         /*
         {
