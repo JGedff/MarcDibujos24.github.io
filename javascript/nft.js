@@ -17,7 +17,7 @@ const nft = { // https://www.instagram.com/stories/highlights/17961787711729103/
             "title": "NFT mujer",
         },
         {
-            "src": "./img/nft4",
+            "src": "./img/nft4.jpg",
             "title": "NFT hombre",
         },
         {
