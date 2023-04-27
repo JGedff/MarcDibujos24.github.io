@@ -1,4 +1,4 @@
-const blanco_negro = { // https://www.instagram.com/stories/highlights/17868269716733319/
+const blanco_negro = {
     "doc": [
         {
             "src": "./img/Lawliet.jpg",

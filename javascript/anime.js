@@ -13,7 +13,7 @@ const anime = {
             "title": "Detectiu Conan",
         },
         {
-            "src": "./img/fondoMultiple.jpeg",
+            "src": "./img/fondoMultiple.jpg",
             "title": "Fondo de diferentes animes",
         },
         /*
