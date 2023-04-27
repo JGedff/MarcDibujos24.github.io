@@ -140,7 +140,11 @@ li > a {
 
 @media screen and (max-width: 920px) {
     main {
-        margin-top: 220px;
+        margin-top: 230px;
+    }
+
+    header {
+        position: absolute;
     }
 
     .insideCarousel {
