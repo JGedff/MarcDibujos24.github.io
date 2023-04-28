@@ -2,7 +2,7 @@ const fusiones = {
     "doc": [
         {
             "src": "./img/crashBandicoot_Sonic.jpeg",
-            "title": "Crash Bandicoot & Sonic",
+            "title": "Crash Bandicoot + Sonic & Eggman + Neo Cortex",
         },
         {
             "src": "./img/BatPat_Luigi.jpg",
@@ -18,7 +18,7 @@ const fusiones = {
         },
         {
             "src": "./img/Buizel_benWolf.jpg",
-            "title": "Buizel & Ben Wolf",
+            "title": "Buizel & Blitzwolfer",
         },
         {
             "src": "./img/Bulma_Videl.jpg",
@@ -26,11 +26,11 @@ const fusiones = {
         },
         {
             "src": "./img/Dabi_zackFoster.jpg",
-            "title": "Babi & Zack Foster",
+            "title": "Dabi & Zack Foster",
         },
         {
             "src": "./img/hombreArena_benFranq.jpg",
-            "title": "Hombre Arena & Ben Franq",
+            "title": "Hombre Arena & Frankentrueno",
         },
         {
             "src": "./img/Humungosaurio_Raphael.jpg",
@@ -38,11 +38,11 @@ const fusiones = {
         },
         {
             "src": "./img/Pikachu_benUpchuck.jpg",
-            "title": "Pikachu & Ben Upchuck",
+            "title": "Pikachu & Upchuck",
         },
         {
             "src": "./img/Po_bearticUrsaring.jpg",
-            "title": "Po & Beartic Ursaring",
+            "title": "Po & Beartic & Ursaring",
         },
         {
             "src": "./img/Stain_Freezer.jpg",
@@ -54,7 +54,7 @@ const fusiones = {
         },
         {
             "src": "./img/Zoroark_benWolf.jpg",
-            "title": "Zoroark & Ben Wolf",
+            "title": "Zoroark & BlitzWolfer",
         },
         /*
         {
