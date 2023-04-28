@@ -58,8 +58,9 @@ function searchDraw() {
             };
     
             arrayImagenes.abc.forEach(img => {
+                let title = img.title.toLowerCase();
                 
-                if (img.title.indexOf(valor) !== -1) {
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.abc[counter] = img;
                     counter = counter + 1;
@@ -74,8 +75,9 @@ function searchDraw() {
             has_images = false;
     
             arrayImagenes.anime.forEach(img => {
+                let title = img.title.toLowerCase();
                 
-                if (img.title.indexOf(valor) !== -1) {
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.anime[counter] = img;
                     counter = counter + 1;
@@ -90,8 +92,9 @@ function searchDraw() {
             has_images = false;
     
             arrayImagenes.blanco_negro.forEach(img => {
-                
-                if (img.title.indexOf(valor) !== -1) {
+                let title = img.title.toLowerCase();
+
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.blanco_negro[counter] = img;
                     counter = counter + 1;
@@ -106,8 +109,9 @@ function searchDraw() {
             has_images = false;
     
             arrayImagenes.dragonBall.forEach(img => {
-                
-                if (img.title.indexOf(valor) !== -1) {
+                let title = img.title.toLowerCase();
+
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.dragonBall[counter] = img;
                     counter = counter + 1;
@@ -122,8 +126,9 @@ function searchDraw() {
             has_images = false;
             
             arrayImagenes.fondos.forEach(img => {
-                
-                if (img.title.indexOf(valor) !== -1) {
+                let title = img.title.toLowerCase();
+
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.fondos[counter] = img;
                     counter = counter + 1;
@@ -138,8 +143,9 @@ function searchDraw() {
             has_images = false;
             
             arrayImagenes.fusiones.forEach(img => {
-                
-                if (img.title.indexOf(valor) !== -1) {
+                let title = img.title.toLowerCase();
+
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.fusiones[counter] = img;
                     counter = counter + 1;
@@ -154,8 +160,9 @@ function searchDraw() {
             has_images = false;
     
             arrayImagenes.gods.forEach(img => {
-                
-                if (img.title.indexOf(valor) !== -1) {
+                let title = img.title.toLowerCase();
+
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.gods[counter] = img;
                     counter = counter + 1;
@@ -170,8 +177,9 @@ function searchDraw() {
             has_images = false;
     
             arrayImagenes.inazuma.forEach(img => {
-                
-                if (img.title.indexOf(valor) !== -1) {
+                let title = img.title.toLowerCase();
+
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.inazuma[counter] = img;
                     counter = counter + 1;
@@ -186,8 +194,9 @@ function searchDraw() {
             has_images = false;
     
             arrayImagenes.nft.forEach(img => {
-                
-                if (img.title.indexOf(valor) !== -1) {
+                let title = img.title.toLowerCase();
+
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.nft[counter] = img;
                     counter = counter + 1;
@@ -202,8 +211,9 @@ function searchDraw() {
             has_images = false;
     
             arrayImagenes.oc.forEach(img => {
+                let title = img.title.toLowerCase();
                 
-                if (img.title.indexOf(valor) !== -1) {
+                if (title.indexOf(valor) !== -1) {
                     has_images = true;
                     images.oc[counter] = img;
                     counter = counter + 1;
