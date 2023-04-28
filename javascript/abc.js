@@ -38,7 +38,7 @@ const abc = {
         },
         {
             "src": "./img/Inosuke.jpg",
-            "title": "Inosuke",
+            "title" : "Inosuke Hashibara",
         },
         {
             "src": "./img/Jin Kazama.jpg",
