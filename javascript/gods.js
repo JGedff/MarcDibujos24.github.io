@@ -1,28 +1,30 @@
-const gods = { //https://www.instagram.com/stories/highlights/17967234712947005/
+const gods = {
     "doc": [
         {
-            "src": "./img/",
-            "title": "name",
+            "src": "./img/Hera.jpeg",
+            "title": "Hera",
         },
         {
-            "src": "./img/",
-            "title": "name",
+            "src": "./img/Angel & Devil.jpeg",
+            "title": "Angel & Devil",
         },
         {
-            "src": "./img/",
-            "title": "name",
+            "src": "./img/Fuijin & Raijin.jpeg",
+            "title": "Fuijin & Raijin",
         },
         {
-            "src": "./img/",
-            "title": "name",
+            "src": "./img/Hermes.jpeg",
+            "title": "Hermes",
         },
         {
-            "src": "./img/",
-            "title": "name",
+            "src": "./img/Skadi.jpeg",
+            "title": "Skadi",
         },
+        /*
         {
             "src": "./img/",
             "title": "name",
         }
+        */
     ]
 }
