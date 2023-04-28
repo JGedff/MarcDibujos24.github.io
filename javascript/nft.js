@@ -1,4 +1,4 @@
-const nft = { // https://www.instagram.com/stories/highlights/17961787711729103/
+const nft = {
     "doc": [
         {
             "src": "./img/nft.jpg",
@@ -17,7 +17,7 @@ const nft = { // https://www.instagram.com/stories/highlights/17961787711729103/
             "title": "NFT mujer",
         },
         {
-            "src": "./img/nft4.jpg",
+            "src": "./img/nft4",
             "title": "NFT hombre",
         },
         {

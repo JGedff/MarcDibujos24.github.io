@@ -118,7 +118,7 @@ function loadImages(object) {
     html = html + "</div><div>";
 
     if (object.inazuma != null) {
-        html = html + "<h3>Categoría Inazuma eleven:</h3><div class='d-flex flex-wrap'>";
+        html = html + "<h3>Categoría Inazuma:</h3><div class='d-flex flex-wrap'>";
 
         object.inazuma.forEach(img => {
             html = html + `<div>

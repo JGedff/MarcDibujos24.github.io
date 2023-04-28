@@ -38,7 +38,7 @@ const fondos = {
         },
         {
             "src": "./img/markEvans.jpeg",
-            "title": "Mark Evans & JP",
+            "title": "Mark Evans",
         },
         {
             "src": "./img/sayan.jpeg",

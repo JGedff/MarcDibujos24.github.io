@@ -17,6 +17,7 @@ function searchField() {
                             <option value="Fondos"> Fondos </option>
                             <option value="Fusiones"> Fusiones </option>
                             <option value="Gods & Goddesses"> Gods & Goddesses </option>
+                            <option value="Inazuma"> Inazuma </option>
                             <option value="NFT"> NFT</option>
                             <option value="OC"> Personajes Originales </option>
                         </select>`;
@@ -38,183 +39,188 @@ function searchDraw() {
 
     dialogSearcher.close();
 
-    if (field == "category") {
-        loadCategory(`${frase}`);
+    if (document.getElementById('resultDoubleSearch').style.display == 'none') {
+        if (field == "category") {
+            loadCategory(`${frase}`);
+        }
+        else {
+            let counter = 0;
+            let has_images = false;
+            let images = {
+                "abc": [],
+                "anime": [],
+                "blanco_negro": [],
+                "dragonBall": [],
+                "fondos": [],
+                "fusiones": [],
+                "gods": [],
+                "inazuma": [],
+                "nft": [],
+                "oc": []
+            };
+    
+            arrayImagenes.abc.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.abc[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.abc = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+    
+            arrayImagenes.anime.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.anime[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.anime = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+    
+            arrayImagenes.blanco_negro.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.blanco_negro[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.blanco_negro = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+    
+            arrayImagenes.dragonBall.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.dragonBall[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.dragonBall = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+            
+            arrayImagenes.fondos.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.fondos[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.fondos = null;
+            }
+            
+            counter = 0;
+            has_images = false;
+            
+            arrayImagenes.fusiones.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.fusiones[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.fusiones = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+    
+            arrayImagenes.gods.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.gods[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.gods = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+    
+            arrayImagenes.inazuma.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.inazuma[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.inazuma = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+    
+            arrayImagenes.nft.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.nft[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.nft = null;
+            }
+    
+            counter = 0;
+            has_images = false;
+    
+            arrayImagenes.oc.forEach(img => {
+                
+                if (img.title.indexOf(valor) !== -1) {
+                    has_images = true;
+                    images.oc[counter] = img;
+                    counter = counter + 1;
+                }
+            });
+    
+            if (!has_images) {
+                images.oc = null;
+            }
+    
+            loadImages(images);
+        }
     }
     else {
-        let counter = 0;
-        let has_images = false;
-        let images = {
-            "abc": [],
-            "anime": [],
-            "blanco_negro": [],
-            "dragonBall": [],
-            "fondos": [],
-            "fusiones": [],
-            "gods": [],
-            "inazuma": [],
-            "nft": [],
-            "oc": []
-        };
-
-        arrayImagenes.abc.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.abc[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.abc = null;
-        }
-
-        counter = 0;
-        has_images = false;
-
-        arrayImagenes.anime.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.anime[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.anime = null;
-        }
-
-        counter = 0;
-        has_images = false;
-
-        arrayImagenes.blanco_negro.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.blanco_negro[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.blanco_negro = null;
-        }
-
-        counter = 0;
-        has_images = false;
-
-        arrayImagenes.dragonBall.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.dragonBall[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.dragonBall = null;
-        }
-
-        counter = 0;
-        has_images = false;
-        
-        arrayImagenes.fondos.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.fondos[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.fondos = null;
-        }
-        
-        counter = 0;
-        has_images = false;
-        
-        arrayImagenes.fusiones.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.fusiones[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.fusiones = null;
-        }
-
-        counter = 0;
-        has_images = false;
-
-        arrayImagenes.gods.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.gods[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.gods = null;
-        }
-
-        counter = 0;
-        has_images = false;
-
-        arrayImagenes.inazuma.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.inazuma[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.inazuma = null;
-        }
-
-        counter = 0;
-        has_images = false;
-
-        arrayImagenes.nft.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.nft[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.nft = null;
-        }
-
-        counter = 0;
-        has_images = false;
-
-        arrayImagenes.oc.forEach(img => {
-            
-            if (img.title.indexOf(valor) !== -1) {
-                has_images = true;
-                images.oc[counter] = img;
-                counter = counter + 1;
-            }
-        });
-
-        if (!has_images) {
-            images.oc = null;
-        }
-
-        loadImages(images);
+        doubleSearch();
     }
 }
 
