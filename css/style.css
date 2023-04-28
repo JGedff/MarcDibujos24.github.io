@@ -100,6 +100,14 @@ li > a {
     width: 125px;
 }
 
+#home {
+    color: white;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    display: none;
+}
+
 #search {
     position: fixed;
     bottom: 15px;
@@ -149,6 +157,10 @@ li > a {
 
     .insideCarousel {
         height: 150px;
+    }
+
+    #home {
+        display: block;
     }
 
     #sidebarButton {
