@@ -2,23 +2,23 @@ const oc = {
     "doc": [
         {
             "src": "./img/fantasmatico.jpg",
-            "title": "Fantasmático (Ben 10)",
+            "title": "",
         },
         {
             "src": "./img/bruja.jpeg",
-            "title": "Bruja",
+            "title": "",
         },
         {
             "src": "./img/fondo2.jpeg",
-            "title": "Fondo de pantalla",
+            "title": "",
         },
         {
             "src": "./img/animales.jpeg",
-            "title": "Animales",
+            "title": "",
         },
         {
             "src": "./img/1.jpg",
-            "title": "Vampira",
+            "title": "",
         },
         {
             "src": "./img/2.jpg",
