@@ -23,10 +23,7 @@ const dragonBall = {
         {
             "src": "./img/gohanFondo.jpeg",
             "title": "Gohan",
-        },
-        {
-            "src": "./img/sayan.jpeg",
-            "title": "Saiyajin",
+      
         },
         {
             "src": "./img/Vegito_vegita.jpeg",
