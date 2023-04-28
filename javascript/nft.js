@@ -17,7 +17,7 @@ const nft = {
             "title": "NFT mujer",
         },
         {
-            "src": "./img/nft4",
+            "src": "./img/nft4.jpg",
             "title": "NFT hombre",
         },
         {
