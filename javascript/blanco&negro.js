@@ -14,7 +14,7 @@ const blanco_negro = {
         },
         {
             "src": "./img/fantasmatico.jpg",
-            "title": "Fantasmático (Ben 10)",
+            "title": "Fantasmático",
         },
         {
             "src": "./img/logo5fdp.jpg",
