@@ -12,7 +12,7 @@ function searchField() {
         html = html + `<select name="input" class="form-control" id="input">
                             <option value="ABC"> ABC </option>
                             <option value="Anime"> Anime </option>
-                            <option value="Blanco & Negro"> Blanco & Negro </option>
+                            <option value="Blanco_negro"> Blanco & Negro </option>
                             <option value="Dragon ball"> Dragon ball </option>
                             <option value="Fondos"> Fondos </option>
                             <option value="Fusiones"> Fusiones </option>
@@ -23,23 +23,21 @@ function searchField() {
                         </select>`;
     }
 
-    html = html + `<button type="submit" onclick="searchDraw()" class="mt-3 btn btn-info" action="data-dismiss='modal'"> Buscar </button>
-    <button type="submit" onclick="resetSearcher()" class="mt-3 btn btn-danger" action="data-dismiss='modal'"> Parar buscador </button>`;
-
     document.getElementById('resultSearchInput').innerHTML = html;
 }
 
 function searchDraw() {
     document.getElementById('info').style.display = 'none';
     document.getElementById('dibujos').style.display = 'block';
-
+    
+    let checker = document.getElementById('doubleSearchYes').checked;
     let field = document.getElementById('searchInput').value;
     let frase = document.getElementById('input').value;
     let valor = frase.toLowerCase();
 
     dialogSearcher.close();
 
-    if (document.getElementById('resultDoubleSearch').style.display == 'none') {
+    if (!checker) {
         if (field == "category") {
             loadCategory(`${frase}`);
         }
