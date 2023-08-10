@@ -27,9 +27,6 @@ function searchField() {
 }
 
 function searchDraw() {
-    document.getElementById('info').style.display = 'none';
-    document.getElementById('dibujos').style.display = 'block';
-    
     let checker = document.getElementById('doubleSearchYes').checked;
     let field = document.getElementById('searchInput').value;
     let frase = document.getElementById('input').value;
@@ -234,7 +231,6 @@ function searchDraw() {
 
 function resetSearcher() {
     showImages();
-    document.getElementById('info').style.display = 'block';
     dialogSearcher.close();
 }
 

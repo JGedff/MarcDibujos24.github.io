@@ -436,9 +436,6 @@ function loadTwoCategories(cat1, cat2) {
 
         html = html + "</div>";
     }
-    
-    document.getElementById('info').style.display = 'none';
-    document.getElementById('dibujos').style.display = 'block';
 
     document.getElementById('images').innerHTML = html;
 }

@@ -1,7 +1,4 @@
 function loadInfo() {
-    document.getElementById('info').style.display = 'block';
-    document.getElementById('dibujos').style.display = 'none';
-
     loadImages(arrayImagenes);
 }
 
@@ -311,9 +308,6 @@ function loadCategory(cat) {
     else {
         html = "<strong>La categoría no existe</strong>";
     }
-    
-    document.getElementById('info').style.display = 'none';
-    document.getElementById('dibujos').style.display = 'block';
 
     document.getElementById('images').innerHTML = html;
 }
