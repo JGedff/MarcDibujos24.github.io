@@ -1,8 +1,10 @@
-export const SearcherModal = () => {
+export const SearcherModal = ({ resetSearcher }) => {
+
     const handleClick = () => {
         searchField()
         checkDoubleSearch()
     }
+
     return (
         <>
             <button className={'btn btn-info'} id="search" onClick={handleClick} >
@@ -21,13 +23,13 @@ export const SearcherModal = () => {
                                 <div>
                                     <label> Quiere buscar por dos categorias o una categoría y el nombre? </label>
                                     <div>
-                                        <input type="checkbox" name="doubleSearh" id="doubleSearchYes" onClick={checkDoubleSearch()} />
+                                        <input type="checkbox" name="doubleSearh" id="doubleSearchYes" onClick={checkDoubleSearch} />
                                         <label for="doubleSearchYes" className={'mr-3 mb-2'} > Si </label>
                                     </div>
                                 </div>
 
                                 <label for="searchInput" className={'mt-3'} > Elije una opción </label>
-                                <select name="searchInput" className={'form-control'} id="searchInput" onClick={searchField()}>
+                                <select name="searchInput" className={'form-control'} id="searchInput" onClick={searchField}>
                                     <option value="title"> Titulo del dibujo </option>
                                     <option value="category"> Categoría </option>
                                 </select>
@@ -52,8 +54,8 @@ export const SearcherModal = () => {
                                     </select>
                                 </div>
 
-                                <button type="submit" onClick={searchDraw()} className={'mt-3 btn btn-info'} action="data-dismiss='modal'"> Buscar </button>
-                                <button type="submit" onClick={resetSearcher()} className={'mt-3 btn btn-danger'} action="data-dismiss='modal'"> Parar buscador </button>
+                                <button type="submit" onClick={searchDraw} className={'mt-3 btn btn-info'} action="data-dismiss='modal'"> Buscar </button>
+                                <button type="submit" onClick={resetSearcher} className={'mt-3 btn btn-danger'} action="data-dismiss='modal'"> Parar buscador </button>
                             </form>
                         </div>
                     </div>

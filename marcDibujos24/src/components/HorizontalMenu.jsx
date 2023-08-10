@@ -1,18 +1,31 @@
-export const HorizontalMenu = () => {
+export const HorizontalMenu = ({
+    handleClick,
+    showAbc,
+    showAnime,
+    showBn,
+    showDragonBall,
+    showFondos,
+    showFusiones,
+    showGods,
+    showInazuma,
+    showNft,
+    showOc
+}) => {
+    
     return (
         <div id="horzontalMenu">
             <ul className={'d-flex mt-5 align-items-center p-0'} >
-                <li> <a href="#images" className={'rounded'} onClick={loadInfo()} > Sobre mi </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('ABC')}> ABC </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('Anime')}> Anime </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('Blanco_negro')}> Blanco & Negro </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('Dragon ball')}> Dragon ball </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('Fondos')}> Fondos </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('Fusiones')}> Fusiones </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('Gods & Goddesses')}> Gods & Goddesses </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('Inazuma')}> Inazuma </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('NFT')}> NFT </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={loadCategory('OC')}> Personages Originales </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={handleClick} > Sobre mi </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showAbc}> ABC </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showAnime}> Anime </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showBn}> Blanco & Negro </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showDragonBall}> Dragon ball </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showFondos}> Fondos </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showFusiones}> Fusiones </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showGods}> Gods & Goddesses </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showInazuma}> Inazuma </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showNft}> NFT </a> </li>
+                <li> <a href="#images" className={'rounded'} onClick={showOc}> Personages Originales </a> </li>
             </ul>
         </div>
     )

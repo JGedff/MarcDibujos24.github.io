@@ -135,3 +135,15 @@ export const getOCImg = () => {
     
     return img
 }
+
+export const getInitialImage = () => {
+    let newArray = []
+
+    fondos.forEach(img => {
+        if (img.title === 'Portada') {
+            newArray.push(img)
+        }
+    })
+    
+    return img
+}

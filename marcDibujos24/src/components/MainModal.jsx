@@ -1,11 +1,17 @@
-export const MainModal = () => {
+import { Carousel } from "./Carousel"
+import { GoUp } from "./GoUp"
+import { SearcherModal } from "./SearcherModal"
+import { ShowImagesModal } from "./ShowImagesModal"
+
+export const MainModal = ({ arrayImages, resetSearcher }) => {
+    
     return (
         <main>
-            <InitialImage></InitialImage>
+            <Carousel initialImage={arrayImages.initialImage}></Carousel>
 
-            <ShowImagesModal></ShowImagesModal>
+            <ShowImagesModal arrayImages={arrayImages}></ShowImagesModal>
 
-            <SearcherModal></SearcherModal>
+            <SearcherModal resetSearcher={resetSearcher}></SearcherModal>
 
             <GoUp></GoUp>
         </main>
