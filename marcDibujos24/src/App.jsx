@@ -18,11 +18,12 @@ import {
 import { useState } from 'react';
 import { MainModal } from './components/MainModal';
 import { HeaderModal } from './components/HeaderModal';
+import { SearcherModal } from './components/SearcherModal';
 
 function App() {
   const [arrayImages, setArrayImages] = useState([])
 
-  const selectCategory = (categoryName = 'all') => {
+  const getCategory = (categoryName = 'all') => {
     let newArrayImages = {
       initialImage: getInitialImage(),
     }
@@ -72,38 +73,186 @@ function App() {
         break;
     }
 
+    return newArrayImages
+  }
+
+  const getImgByTitle = (value) => {
+    let counter = 0
+    let imgInCategory = false
+    const allImages = getCategory()
+    let newArrayImages = {
+      initialImage: getInitialImage(),
+    }
+
+    allImages.abc.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.abc[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+    
+    allImages.anime.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.anime[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+    
+    allImages.bn.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.bn[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+    
+    allImages.dragonBall.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.dragonBall[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+
+    allImages.fondos.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.fondos[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+
+    allImages.fusiones.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.fusiones[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+
+    allImages.gods.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.gods[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+
+    allImages.inazuma.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.inazuma[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+
+    allImages.nft.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.nft[counter] = img;
+          counter = counter + 1;
+      }
+    });
+
+    counter = 0
+
+    allImages.oc.forEach(img => {
+      const title = img.title.toLowerCase();
+      
+      if (title.indexOf(value) !== -1) {
+          imgInCategory = true;
+          newArrayImages.oc[counter] = img;
+          counter = counter + 1;
+      }
+    });
+  }
+
+  const selectCategory = (categoryName) => {
+    const newArrayImages = getCategory(categoryName)
+
     setArrayImages(newArrayImages)
   }
   
   const selectAbcCategory = () => {
     selectCategory('abc')
   }
+
   const selectAnimeCategory = () => {
     selectCategory('anime')
   }
+
   const selectBnCategory = () => {
     selectCategory('bn')
   }
+
   const selectDragonBallCategory = () => {
     selectCategory('dragonBall')
   }
+
   const selectFondosCategory = () => {
     selectCategory('fondos')
   }
+
   const selectFusionesCategory = () => {
     selectCategory('fusiones')
   }
+
   const selectGodsCategory = () => {
     selectCategory('gods')
   }
+
   const selectInazumaCategory = () => {
     selectCategory('inazuma')
   }
+
   const selectNftCategory = () => {
     selectCategory('nft')
   }
+
   const selectOcCategory = () => {
     selectCategory('oc')
+  }
+
+  const searchTitle = (title) => {
+    const newArrayImages = getImgByTitle(title.toLowerCase())
+
+    setArrayImages(newArrayImages)
   }
 
   return (
@@ -121,7 +270,9 @@ function App() {
         showOc={selectOcCategory} >
       </HeaderModal>
 
-      <MainModal arrayImages={arrayImages} resetSearcher={selectCategory}></MainModal>
+      <MainModal arrayImages={arrayImages} ></MainModal>
+
+      <SearcherModal resetSearcher={selectCategory} changeCategory={selectCategory} searchImgTitle={searchTitle}></SearcherModal>
     </>
   )
 }

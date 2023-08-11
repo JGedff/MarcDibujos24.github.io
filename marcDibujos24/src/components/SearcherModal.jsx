@@ -1,8 +1,16 @@
-export const SearcherModal = ({ resetSearcher }) => {
+import { useState } from "react"
+import { SearchForm } from "./SearchForm"
+
+export const SearcherModal = ({ resetSearcher, changeCategory, searchImgTitle }) => {
+
+    const [showForm, setShowForm] = useState(false)
 
     const handleClick = () => {
-        searchField()
-        checkDoubleSearch()
+        setShowForm(!showForm)
+    }
+
+    const getDisplay = (boolean) => {
+        return boolean ? 'block' : 'none'
     }
 
     return (
@@ -12,51 +20,13 @@ export const SearcherModal = ({ resetSearcher }) => {
                 Buscar
             </button>
 
-            <dialog className={'popup_dialogSearcher border-blue rounded w-50'} id="dialogSearcher">
+            <dialog className={'popup_dialogSearcher border-blue rounded w-50'} id="dialogSearcher" style={{ display: getDisplay(showForm) }}>
                 <div className={'rounded d-flex justify-content-center'} >
                     <div>
                         <h5>Buscar dibujo</h5>
-
+    
                         <div className={'d-flex align-items-center'} >
-                            <form className={'mb-4'}  onsubmit="searchField(); event.preventDefault();">
-
-                                <div>
-                                    <label> Quiere buscar por dos categorias o una categoría y el nombre? </label>
-                                    <div>
-                                        <input type="checkbox" name="doubleSearh" id="doubleSearchYes" onClick={checkDoubleSearch} />
-                                        <label for="doubleSearchYes" className={'mr-3 mb-2'} > Si </label>
-                                    </div>
-                                </div>
-
-                                <label for="searchInput" className={'mt-3'} > Elije una opción </label>
-                                <select name="searchInput" className={'form-control'} id="searchInput" onClick={searchField}>
-                                    <option value="title"> Titulo del dibujo </option>
-                                    <option value="category"> Categoría </option>
-                                </select>
-            
-                                <div id="resultSearchInput">
-            
-                                </div>
-
-                                <div id="resultDoubleSearch">
-                                    <label for="inputDoubleSearch" className={'mt-3'}> Elije una categoría </label>
-                                    <select name="input" className={'form-control'} id="inputDoubleSearch">
-                                        <option value="ABC"> ABC </option>
-                                        <option value="Anime"> Anime </option>
-                                        <option value="Blanco_negro"> Blanco & Negro </option>
-                                        <option value="Dragon ball"> Dragon ball </option>
-                                        <option value="Fondos"> Fondos </option>
-                                        <option value="Fusiones"> Fusiones </option>
-                                        <option value="Gods & Goddesses"> Gods & Goddesses </option>
-                                        <option value="Inazuma"> Inazuma </option>
-                                        <option value="NFT"> NFT</option>
-                                        <option value="OC"> Personajes Originales </option>
-                                    </select>
-                                </div>
-
-                                <button type="submit" onClick={searchDraw} className={'mt-3 btn btn-info'} action="data-dismiss='modal'"> Buscar </button>
-                                <button type="submit" onClick={resetSearcher} className={'mt-3 btn btn-danger'} action="data-dismiss='modal'"> Parar buscador </button>
-                            </form>
+                            <SearchForm resetSearcher={resetSearcher} changeImgCategory={changeCategory} searchTitle={searchImgTitle}></SearchForm>
                         </div>
                     </div>
                 </div>
