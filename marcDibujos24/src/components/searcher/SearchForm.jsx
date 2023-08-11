@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { ChooseDoubleSearch } from "./ChooseDoubleSearch"
+import { SearchValues } from "./SearchValues"
 
-export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle }) => {
+export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle, searchTwoCategories, searchImgInCategoryByTitle, searchImgByTwoTitles }) => {
 
     const [title, setTitle] = useState('')
     const [category, setCategory] = useState('')
@@ -22,6 +23,14 @@ export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle }) =>
     const searchByCategory = () => {
         setSearchModal('category')
     }
+    
+    const searchDoubleByTitle = () => {
+        setDoubleSearchModal('title')
+    }
+
+    const searchDoubleByCategory = () => {
+        setDoubleSearchModal('category')
+    }
 
     const changeValue = (newValue) => {
         setTitle(newValue)
@@ -29,6 +38,14 @@ export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle }) =>
 
     const changeCategory = (newCategory) => {
         setCategory(newCategory)
+    }
+    
+    const changeDoubleValue = (newValue) => {
+        setDoubleSearchTitle(newValue)
+    }
+
+    const changeDoubleCategory = (newCategory) => {
+        setDoubleSearchCategory(newCategory)
     }
 
     const search = () => {
@@ -61,14 +78,28 @@ export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle }) =>
                 </div>
             </div>
 
-            <label for="searchInput" className={'mt-3'} > Elije una opción </label>
-            <select name="searchInput" className={'form-control'} id="searchInput">
-                <option onClick={searchByTitle}> Titulo del dibujo </option>
-                <option onClick={searchByCategory}> Categoría </option>
-            </select>
+            <div>
+                <label for="searchInput" className={'mt-3'} > Elije una opción </label>
+                <select name="searchInput" className={'form-control'}>
+                    <option onClick={searchByTitle}> Titulo del dibujo </option>
+                    <option onClick={searchByCategory}> Categoría </option>
+                </select>
 
-            <div id="resultDoubleSearch">
-                <SearchValues initialType={searchModal} changeValue={changeValue} changeCategory={changeCategory}></SearchValues>
+                <div>
+                    <SearchValues initialType={searchModal} changeValue={changeValue} changeCategory={changeCategory}></SearchValues>
+                </div>
+            </div>
+
+            <div style={{display: doubleSearch ? 'block' : 'none'}}>
+                <label for="searchInput" className={'mt-3'} > Elije una opción </label>
+                <select name="searchInput" className={'form-control'}>
+                    <option onClick={searchDoubleByTitle}> Titulo del dibujo </option>
+                    <option onClick={searchDoubleByCategory}> Categoría </option>
+                </select>
+
+                <div>
+                    <SearchValues initialType={doubleSearchModal} changeValue={changeDoubleValue} changeCategory={changeDoubleCategory}></SearchValues>                
+                </div>
             </div>
 
             <button type="submit" className={'mt-3 btn btn-info'} formAction="data-dismiss='modal'" onClick={search}> Buscar </button>

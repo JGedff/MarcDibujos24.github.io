@@ -13,7 +13,7 @@ export const HorizontalMenu = ({
 }) => {
     
     return (
-        <div id="horzontalMenu">
+        <div>
             <ul className={'d-flex mt-5 align-items-center p-0'} >
                 <li> <a href="#images" className={'rounded'} onClick={handleClick} > Sobre mi </a> </li>
                 <li> <a href="#images" className={'rounded'} onClick={showAbc}> ABC </a> </li>
