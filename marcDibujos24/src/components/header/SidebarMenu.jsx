@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { showSidebarButtonIcon } from "../../js/sidebar";
 
 export const SidebarMenu = ({
     handleClick,
@@ -21,14 +22,14 @@ export const SidebarMenu = ({
     }
 
     return (
-        <>
+        <div>
             <div>
                 <button className={'btn btn-info ml-3 mt-2 mb-3'} onClick={negateSidebar}>
                     {showSidebarButtonIcon(sidebar)}
                 </button>
             </div>
 
-            <div> { /* S'ha de fer un menú aqui */}
+            <div style={{ display: sidebar ? 'block' : 'none' }}>
                 <ul className={'p-3 m-0'}>
                     <li> <a href="#images" className={'rounded w-100 d-flex justify-content-center'} onClick={handleClick}> Inicio </a> </li>
                     <li> <a href="#images" className={'rounded w-100 d-flex justify-content-center'} onClick={showAbc}> ABC </a> </li>
@@ -43,6 +44,6 @@ export const SidebarMenu = ({
                     <li> <a href="#images" className={'rounded w-100 d-flex justify-content-center'} onClick={showOc}> Personages Originales </a> </li>
                 </ul>
             </div>
-        </>
+        </div>
     )
 }

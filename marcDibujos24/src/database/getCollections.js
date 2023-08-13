@@ -133,17 +133,17 @@ export const getOCImg = () => {
         newArray.push(img)
     })
     
-    return img
+    return newArray
 }
 
 export const getInitialImage = () => {
-    let newArray = []
+    let image = {}
 
     fondos.forEach(img => {
         if (img.title === 'Portada') {
-            newArray.push(img)
+            image = img
         }
     })
     
-    return img
+    return image
 }

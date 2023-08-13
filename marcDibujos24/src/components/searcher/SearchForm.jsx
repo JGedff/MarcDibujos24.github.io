@@ -69,7 +69,7 @@ export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle, sear
     }
 
     return (
-        <form className={'mb-4'} onSubmit={event.preventDefault()}>
+        <form className={'mb-4'} >
 
             <div>
                 <label> Quiere buscar por dos categorias o una categoría y el nombre? </label>
@@ -79,7 +79,7 @@ export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle, sear
             </div>
 
             <div>
-                <label for="searchInput" className={'mt-3'} > Elije una opción </label>
+                <label htmlFor="searchInput" className={'mt-3'} > Elije una opción </label>
                 <select name="searchInput" className={'form-control'}>
                     <option onClick={searchByTitle}> Titulo del dibujo </option>
                     <option onClick={searchByCategory}> Categoría </option>
@@ -91,7 +91,7 @@ export const SearchForm = ({ resetSearcher, changeImgCategory, searchTitle, sear
             </div>
 
             <div style={{display: doubleSearch ? 'block' : 'none'}}>
-                <label for="searchInput" className={'mt-3'} > Elije una opción </label>
+                <label htmlFor="searchInput" className={'mt-3'} > Elije una opción </label>
                 <select name="searchInput" className={'form-control'}>
                     <option onClick={searchDoubleByTitle}> Titulo del dibujo </option>
                     <option onClick={searchDoubleByCategory}> Categoría </option>

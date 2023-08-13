@@ -13,7 +13,7 @@ import {
   getNFTImg,
   getOCImg,
   getInitialImage
-} from "../../database/getCollections"
+} from "./database/getCollections"
 
 import { useState } from 'react';
 import { HeaderModal } from './components/header/HeaderModal';
@@ -21,8 +21,6 @@ import { MainModal } from './components/MainModal';
 import { SearcherModal } from './components/searcher/SearcherModal';
 
 function App() {
-
-  const [arrayImages, setArrayImages] = useState([])
 
   const getCategory = (categoryName = 'all') => {
     let newArrayImages = {
@@ -73,6 +71,8 @@ function App() {
         newArrayImages.oc = getOCImg()
         break;
     }
+
+    console.log(newArrayImages)
 
     return newArrayImages
   }
@@ -500,7 +500,9 @@ function App() {
     return newArrayImages
   }
 
-  const selectCategory = (categoryName) => {
+  const [arrayImages, setArrayImages] = useState(getCategory())
+
+  const selectCategory = (categoryName = 'all') => {
     const newArrayImages = getCategory(categoryName)
 
     setArrayImages(newArrayImages)
@@ -673,7 +675,7 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <HeaderModal setDefaultImages={selectCategory}
         showAbc={selectAbcCategory}
         showAnime={selectAnimeCategory}
@@ -687,7 +689,7 @@ function App() {
         showOc={selectOcCategory} >
       </HeaderModal>
 
-      <MainModal arrayImages={arrayImages} ></MainModal>
+      <MainModal data={arrayImages} ></MainModal>
 
       <SearcherModal
         resetSearcher={selectCategory}
@@ -697,7 +699,7 @@ function App() {
         searchImgInCategoryByTitle={searchImgInCategoryByTitle}
         searchImgByTwoTitles={searchImgByTwoTitles} >
       </SearcherModal>
-    </>
+    </div>
   )
 }
 

@@ -1,6 +1,16 @@
 import { Drawing } from "./Drawing"
 
-export const ShowImagesModal = ({ arrayImages }) => {
+export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fusiones, gods, inazuma, nft, oc } }) => {
+
+    const getImagesFromArray = (arrayImages) => {
+        let abcArray = []
+
+        arrayImages.forEach((img, index) => {
+            abcArray.push(<Drawing key={index} title={img.title} src={img.src}></Drawing>)
+        })
+
+        return abcArray
+    }
 
     return (
         <div className={'mt-3 mb-4'} >
@@ -9,143 +19,123 @@ export const ShowImagesModal = ({ arrayImages }) => {
             <div className={'pb-5'} >
 
                 {
-                    arrayImages.abc ?
-                        <>
+                    abc ?
+                        <div>
                             <h3>Categoría ABC:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.abc.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(abc)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.anime ?
-                        <>
+                    anime ?
+                        <div>
                             <h3>Categoría Anime:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.anime.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(anime)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.bn ?
-                        <>
+                    bn ?
+                        <div>
                             <h3>Categoría Blanco & Negro:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.bn.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(bn)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.dragonBall ?
-                        <>
+                    dragonBall ?
+                        <div>
                             <h3>Categoría Dragon ball:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.dragonBall.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(dragonBall)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
                 
                 {
-                    arrayImages.fondos ?
-                        <>
+                    fondos ?
+                        <div>
                             <h3>Categoría Fondos:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.fondos.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(fondos)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.fusiones ?
-                        <>
+                    fusiones ?
+                        <div>
                             <h3>Categoría Fusiones:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.fusiones.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(fusiones)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.gods ?
-                        <>
+                    gods ?
+                        <div>
                             <h3>Categoría Gods & Goddesses:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.gods.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(gods)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.inazuma ?
-                        <>
+                    inazuma ?
+                        <div>
                             <h3>Categoría Inazuma:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.inazuma.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(inazuma)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.nft ?
-                        <>
+                    nft ?
+                        <div>
                             <h3>Categoría NFT:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.nft.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(nft)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
 
                 {
-                    arrayImages.oc ?
-                        <>
+                    oc ?
+                        <div>
                             <h3>Categoría Personajes Originales:</h3>
-                            <div class='d-flex flex-wrap'>
+                            <div className='d-flex flex-wrap'>
                                 {
-                                    arrayImages.oc.forEach(img => (
-                                        <Drawing title={img.title} src={img.src}></Drawing>
-                                    ))
+                                    getImagesFromArray(oc)
                                 }
                             </div>
-                        </> : ''
+                        </div> : ''
                 }
             </div>
         </div>

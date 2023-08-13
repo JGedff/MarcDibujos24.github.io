@@ -54,14 +54,14 @@ export const SearchValues = ({ initialType, changeValue, changeCategory }) => {
 
     const getInputValues = (typeOfValues) => {
         if (typeOfValues === 'title') return (
-            <>
-                <label for='input' className={'mt-3'}> Introduce el nombre del dibujo </label>
+            <div>
+                <label htmlFor='input' className={'mt-3'}> Introduce el nombre del dibujo </label>
                 <input type='text' className={'form-control'} name='input' onChange={handleTextInput} />
-            </>
+            </div>
         )
         else return (
-            <>
-                <label for='input' className={'mt-3'}> Elije la categoría del dibujo </label>
+            <div>
+                <label htmlFor='input' className={'mt-3'}> Elije la categoría del dibujo </label>
                 <select name="input" className={'form-control'}>
                     <option onClick={selectAbcCategory}> ABC </option>
                     <option onClick={selectAnimeCategory}> Anime </option>
@@ -74,7 +74,7 @@ export const SearchValues = ({ initialType, changeValue, changeCategory }) => {
                     <option onClick={selectNftCategory}> NFT</option>
                     <option onClick={selectOcCategory}> Personajes Originales </option>
                 </select>
-            </>
+            </div>
         )
     }
 

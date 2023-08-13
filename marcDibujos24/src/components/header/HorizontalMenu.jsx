@@ -14,8 +14,8 @@ export const HorizontalMenu = ({
     
     return (
         <div>
-            <ul className={'d-flex mt-5 align-items-center p-0'} >
-                <li> <a href="#images" className={'rounded'} onClick={handleClick} > Sobre mi </a> </li>
+            <ul className={'d-flex mt-5 justify-content-around p-0'} >
+                <li> <a href="#images" className={'rounded'} onClick={handleClick} > Inicio </a> </li>
                 <li> <a href="#images" className={'rounded'} onClick={showAbc}> ABC </a> </li>
                 <li> <a href="#images" className={'rounded'} onClick={showAnime}> Anime </a> </li>
                 <li> <a href="#images" className={'rounded'} onClick={showBn}> Blanco & Negro </a> </li>

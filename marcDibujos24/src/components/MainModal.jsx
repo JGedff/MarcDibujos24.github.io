@@ -1,14 +1,21 @@
+import { useEffect, useState } from "react"
 import { Carousel } from "./Carousel"
 import { GoUp } from "./GoUp"
 import { ShowImagesModal } from "./ShowImagesModal"
 
-export const MainModal = ({ arrayImages }) => {
+export const MainModal = ({ data: {...images} }) => {
+
+    const [arrayImages, setArrayImages] = useState(images)
+
+    useEffect(() => {
+        setArrayImages(images)
+    }, [images])
     
     return (
         <main>
-            <Carousel initialImage={arrayImages.initialImage}></Carousel>
+            <Carousel></Carousel>
 
-            <ShowImagesModal arrayImages={arrayImages}></ShowImagesModal>
+            <ShowImagesModal data={arrayImages}></ShowImagesModal>
 
             <GoUp></GoUp>
         </main>

@@ -5,6 +5,10 @@ li {
   justify-content: center;
 }
 
+ul.d-flex li {
+  width: auto;
+}
+
 h3 {
   margin-top: 50px;
 }
@@ -82,10 +86,9 @@ li > a {
   width: 100%;
   height: 250px;
   background-color: green;
-  background-image: url(../img/portada.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
-
+  background-image: "./img/portada.jpg";
 }
 
 .insideCarousel:hover {
