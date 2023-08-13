@@ -593,48 +593,79 @@ function App() {
   }
 
   const searchImgInCategoryByTitle = (category, title) => {
-    const newArrayImages = getImgByCategoryAndTitle(category, title)
+    const newArrayImages = getImgByCategoryAndTitle(category, title.toLowerCase())
 
     setArrayImages(newArrayImages)
   }
 
   const getImgByCategoryAndTitle = (category, title) => {
-    getImgByTitle(title.toLowerCase())
+    const allImages = getCategory()
 
+    let counter = 0
     let newArrayImages = {
       initialImage: getInitialImage(),
     }
 
     switch (category) {
       case 'abc':
-        newArrayImages.abc = arrayImagesWithTitle.abc
+        allImages.abc.forEach(img => {
+          newArrayImages.abc[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'anime':
-        newArrayImages.anime = arrayImagesWithTitle.anime
+        allImages.anime.forEach(img => {
+          newArrayImages.anime[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'bn':
-        newArrayImages.bn = arrayImagesWithTitle.bn
+        allImages.bn.forEach(img => {
+          newArrayImages.bn[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'dragonBall':
-        newArrayImages.dragonBall = arrayImagesWithTitle.dragonBall
+        allImages.dragonBall.forEach(img => {
+          newArrayImages.dragonBall[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'fondos':
-        newArrayImages.fondos = arrayImagesWithTitle.fondos
+        allImages.fondos.forEach(img => {
+          newArrayImages.fondos[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'fusiones':
-        newArrayImages.fusiones = arrayImagesWithTitle.fusiones
+        allImages.fusiones.forEach(img => {
+          newArrayImages.fusiones[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'gods':
-        newArrayImages.gods = arrayImagesWithTitle.gods
+        allImages.gods.forEach(img => {
+          newArrayImages.gods[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'inazuma':
-        newArrayImages.inazuma = arrayImagesWithTitle.inazuma
+        allImages.inazuma.forEach(img => {
+          newArrayImages.inazuma[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'nft':
-        newArrayImages.nft = arrayImagesWithTitle.nft
+        allImages.nft.forEach(img => {
+          newArrayImages.nft[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
       case 'oc':
-        newArrayImages.oc = arrayImagesWithTitle.oc
+        allImages.oc.forEach(img => {
+          newArrayImages.oc[counter] = getArrayImagesByName(img, title)
+          counter++
+        });
         break;
     }
 
