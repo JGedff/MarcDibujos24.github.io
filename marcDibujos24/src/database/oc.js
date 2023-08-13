@@ -1,23 +1,23 @@
 export const oc = [
     {
         "src": "./img/fantasmatico.jpg",
-        "title": "",
+        "title": "Fantasmático",
     },
     {
         "src": "./img/bruja.jpeg",
-        "title": "",
+        "title": "Bruja",
     },
     {
         "src": "./img/fondo2.jpeg",
-        "title": "",
+        "title": "Fondo de pantalla",
     },
     {
         "src": "./img/animales.jpeg",
-        "title": "",
+        "title": "Animales",
     },
     {
         "src": "./img/1.jpg",
-        "title": "",
+        "title": "Imagen 1",
     },
     {
         "src": "./img/2.jpg",

@@ -22,7 +22,7 @@ import { SearcherModal } from './components/searcher/SearcherModal';
 
 function App() {
 
-  const getCategory = (categoryName = 'all') => {
+  const getCategory = (categoryName) => {
     let newArrayImages = {
       initialImage: getInitialImage(),
     }
@@ -58,7 +58,7 @@ function App() {
       case 'oc':
         newArrayImages.oc = getOCImg()
         break;
-      default:
+      case 'all':
         newArrayImages.abc = getAbcImg()
         newArrayImages.anime = getAnimeImg()
         newArrayImages.bn = getBNImg()
@@ -72,94 +72,194 @@ function App() {
         break;
     }
 
-    console.log(newArrayImages)
-
     return newArrayImages
   }
 
   const getImgByTitle = (value) => {
-    const allImages = getCategory()
+    const allImages = getCategory('all')
 
     let counter = 0
     let newArrayImages = {
       initialImage: getInitialImage(),
+      abc: [],
+      anime: [],
+      bn: [],
+      dragonBall: [],
+      fondos: [],
+      fusiones: [],
+      gods: [],
+      inazuma: [],
+      nft: [],
+      oc: []
     }
 
     allImages.abc.forEach(img => {
       newArrayImages.abc[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.abc[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.abc[counter] = null
+      }
     });
+
+    if (newArrayImages.abc[0] === null) {
+      newArrayImages.abc = null
+    }
 
     counter = 0
     
     allImages.anime.forEach(img => {
       newArrayImages.anime[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.anime[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.anime[counter] = null
+      }
     });
+
+    if (newArrayImages.anime[0] === null) {
+      newArrayImages.anime = null
+    }
 
     counter = 0
     
     allImages.bn.forEach(img => {
       newArrayImages.bn[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.bn[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.bn[counter] = null
+      }
     });
+
+    if (newArrayImages.bn[0] === null) {
+      newArrayImages.bn = null
+    }
 
     counter = 0
     
     allImages.dragonBall.forEach(img => {
       newArrayImages.dragonBall[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.dragonBall[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.dragonBall[counter] = null
+      }
     });
+
+    if (newArrayImages.dragonBall[0] === null) {
+      newArrayImages.dragonBall = null
+    }
 
     counter = 0
 
     allImages.fondos.forEach(img => {
       newArrayImages.fondos[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.fondos[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.fondos[counter] = null
+      }
     });
+
+    if (newArrayImages.fondos[0] === null) {
+      newArrayImages.fondos = null
+    }
 
     counter = 0
 
     allImages.fusiones.forEach(img => {
       newArrayImages.fusiones[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.fusiones[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.fusiones[counter] = null
+      }
     });
+
+    if (newArrayImages.fusiones[0] === null) {
+      newArrayImages.fusiones = null
+    }
 
     counter = 0
 
     allImages.gods.forEach(img => {
       newArrayImages.gods[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.gods[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.gods[counter] = null
+      }
     });
+
+    if (newArrayImages.gods[0] === null) {
+      newArrayImages.gods = null
+    }
 
     counter = 0
 
     allImages.inazuma.forEach(img => {
       newArrayImages.inazuma[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.inazuma[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.inazuma[counter] = null
+      }
     });
+
+    if (newArrayImages.inazuma[0] === null) {
+      newArrayImages.inazuma = null
+    }
 
     counter = 0
 
     allImages.nft.forEach(img => {
       newArrayImages.nft[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.nft[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.nft[counter] = null
+      }
     });
+
+    if (newArrayImages.nft[0] === null) {
+      newArrayImages.nft = null
+    }
 
     counter = 0
 
     allImages.oc.forEach(img => {
       newArrayImages.oc[counter] = getArrayImagesByName(img, value)
-      counter++
+
+      if (newArrayImages.oc[counter] !== undefined) {
+        counter++
+      } else {
+        newArrayImages.oc[counter] = null
+      }
     });
+
+    if (newArrayImages.oc[0] === null) {
+      newArrayImages.oc = null
+    }
+
+    console.log(newArrayImages)
 
     return newArrayImages
   }
 
   const getArrayImagesByName = (img, value) => {
     const title = img.title.toLowerCase();
-
-    if (title.indexOf(value) !== -1) {
+    
+    if (title.indexOf(value.toLowerCase()) !== -1) {
       return img
     }
   }
@@ -493,16 +593,26 @@ function App() {
     arrayImagesCategory1.forEach((imgToFind) => {
       arrayImagesCategory2.forEach((img) => {
         newArrayImages[counter] = getArrayImagesByName(img, imgToFind.title)
+        
+        if (newArrayImages[counter] === undefined) {
+          newArrayImages[counter] = null
+          counter--
+        }
+
         counter++
       });
     })
 
+    if (newArrayImages[0] === null) {
+      newArrayImages = null
+    }
+
     return newArrayImages
   }
 
-  const [arrayImages, setArrayImages] = useState(getCategory())
+  const [arrayImages, setArrayImages] = useState(getCategory('all'))
 
-  const selectCategory = (categoryName = 'all') => {
+  const selectCategory = (categoryName) => {
     const newArrayImages = getCategory(categoryName)
 
     setArrayImages(newArrayImages)
@@ -549,7 +659,7 @@ function App() {
   }
 
   const searchTitle = (title) => {
-    const newArrayImages = getImgByTitle(title.toLowerCase())
+    const newArrayImages = getImgByTitle(title)
 
     setArrayImages(newArrayImages)
   }
@@ -575,16 +685,16 @@ function App() {
       const arrayImagesTitle1 = getImgByTitle(title1.toLowerCase())
       const arrayImagesTitle2 = getImgByTitle(title2.toLowerCase())
   
-      newArrayImages.abc = arrayImagesTitle1.abc.concat(arrayImagesTitle2.abc)
-      newArrayImages.anime = arrayImagesTitle1.anime.concat(arrayImagesTitle2.anime)
-      newArrayImages.bn = arrayImagesTitle1.bn.concat(arrayImagesTitle2.bn)
-      newArrayImages.dragonBall = arrayImagesTitle1.dragonBall.concat(arrayImagesTitle2.dragonBall)
-      newArrayImages.fondos = arrayImagesTitle1.fondos.concat(arrayImagesTitle2.fondos)
-      newArrayImages.fusiones = arrayImagesTitle1.fusiones.concat(arrayImagesTitle2.fusiones)
-      newArrayImages.gods = arrayImagesTitle1.godsgods.concat(arrayImagesTitle2.gods)
-      newArrayImages.inazuma = arrayImagesTitle1.inazuma.concat(arrayImagesTitle2.inazuma)
-      newArrayImages.nft = arrayImagesTitle1.nft.concat(arrayImagesTitle2.nft)
-      newArrayImages.oc = arrayImagesTitle1.oc.concat(arrayImagesTitle2.oc)
+      newArrayImages.abc = arrayImagesTitle1.abc?.concat(arrayImagesTitle2.abc)
+      newArrayImages.anime = arrayImagesTitle1.anime?.concat(arrayImagesTitle2.anime)
+      newArrayImages.bn = arrayImagesTitle1.bn?.concat(arrayImagesTitle2.bn)
+      newArrayImages.dragonBall = arrayImagesTitle1.dragonBall?.concat(arrayImagesTitle2.dragonBall)
+      newArrayImages.fondos = arrayImagesTitle1.fondos?.concat(arrayImagesTitle2.fondos)
+      newArrayImages.fusiones = arrayImagesTitle1.fusiones?.concat(arrayImagesTitle2.fusiones)
+      newArrayImages.gods = arrayImagesTitle1.gods?.concat(arrayImagesTitle2.gods)
+      newArrayImages.inazuma = arrayImagesTitle1.inazuma?.concat(arrayImagesTitle2.inazuma)
+      newArrayImages.nft = arrayImagesTitle1.nft?.concat(arrayImagesTitle2.nft)
+      newArrayImages.oc = arrayImagesTitle1.oc?.concat(arrayImagesTitle2.oc)
   
       return newArrayImages
     } else {
@@ -601,7 +711,7 @@ function App() {
   }
 
   const getImgByCategoryAndTitle = (category, title) => {
-    const allImages = getCategory()
+    const allImages = getCategory('all')
 
     let counter = 0
     let newArrayImages = {
@@ -674,9 +784,19 @@ function App() {
     return newArrayImages
   }
 
+  const getDefaultImages = () => {
+    const newArrayImages = getCategory('all')
+
+    setArrayImages(newArrayImages)
+  }
+
+  const resetSearcher = () => {
+    getDefaultImages()
+  }
+
   return (
     <div>
-      <HeaderModal setDefaultImages={selectCategory}
+      <HeaderModal setDefaultImages={getDefaultImages}
         showAbc={selectAbcCategory}
         showAnime={selectAnimeCategory}
         showBn={selectBnCategory}
@@ -692,7 +812,7 @@ function App() {
       <MainModal data={arrayImages} ></MainModal>
 
       <SearcherModal
-        resetSearcher={selectCategory}
+        resetSearcher={resetSearcher}
         changeCategory={selectCategory}
         searchImgTitle={searchTitle}
         searchTwoCategories={searchTwoCategories}

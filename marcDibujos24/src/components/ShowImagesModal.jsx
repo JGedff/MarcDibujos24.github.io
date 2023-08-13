@@ -2,14 +2,16 @@ import { Drawing } from "./Drawing"
 
 export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fusiones, gods, inazuma, nft, oc } }) => {
 
-    const getImagesFromArray = (arrayImages) => {
-        let abcArray = []
+    const getImagesFromArray = (arrayImages = []) => {
+        let newArrayImages = []
 
         arrayImages.forEach((img, index) => {
-            abcArray.push(<Drawing key={index} title={img.title} src={img.src}></Drawing>)
+            if (img !== null) {
+                newArrayImages.push(<Drawing key={index} title={img.title} src={img.src}></Drawing>)
+            }
         })
 
-        return abcArray
+        return newArrayImages
     }
 
     return (
@@ -19,7 +21,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
             <div className={'pb-5'} >
 
                 {
-                    abc ?
+                    !(abc === null) ?
                         <div>
                             <h3>Categoría ABC:</h3>
                             <div className='d-flex flex-wrap'>
@@ -31,7 +33,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    anime ?
+                    !(anime === null) ?
                         <div>
                             <h3>Categoría Anime:</h3>
                             <div className='d-flex flex-wrap'>
@@ -43,7 +45,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    bn ?
+                    !(bn === null) ?
                         <div>
                             <h3>Categoría Blanco & Negro:</h3>
                             <div className='d-flex flex-wrap'>
@@ -55,7 +57,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    dragonBall ?
+                    !(dragonBall === null) ?
                         <div>
                             <h3>Categoría Dragon ball:</h3>
                             <div className='d-flex flex-wrap'>
@@ -67,7 +69,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
                 
                 {
-                    fondos ?
+                    !(fondos === null) ?
                         <div>
                             <h3>Categoría Fondos:</h3>
                             <div className='d-flex flex-wrap'>
@@ -79,7 +81,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    fusiones ?
+                    !(fusiones === null) ?
                         <div>
                             <h3>Categoría Fusiones:</h3>
                             <div className='d-flex flex-wrap'>
@@ -91,7 +93,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    gods ?
+                    !(gods === null) ?
                         <div>
                             <h3>Categoría Gods & Goddesses:</h3>
                             <div className='d-flex flex-wrap'>
@@ -103,7 +105,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    inazuma ?
+                    !(inazuma === null) ?
                         <div>
                             <h3>Categoría Inazuma:</h3>
                             <div className='d-flex flex-wrap'>
@@ -115,7 +117,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    nft ?
+                    !(nft === null) ?
                         <div>
                             <h3>Categoría NFT:</h3>
                             <div className='d-flex flex-wrap'>
@@ -127,7 +129,7 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    oc ?
+                    !(oc === null) ?
                         <div>
                             <h3>Categoría Personajes Originales:</h3>
                             <div className='d-flex flex-wrap'>
