@@ -24,13 +24,13 @@ export const SearchValues = ({ idSelect, initialType, changeValue, changeCategor
         if (typeOfValues === 'title') return (
             <div>
                 <label htmlFor='input' className={'mt-3'}> Introduce el nombre del dibujo </label>
-                <input type='text' className={'form-control'} name='input' onChange={handleTextInput} id={`${idSelect}selectTitle`} />
+                <input type='text' className={'form-control'} name='input' onChange={handleTextInput} data-testid={`${idSelect}selectTitle`} id={`${idSelect}selectTitle`} />
             </div>
         )
         else return (
             <div>
                 <label htmlFor='input' className={'mt-3'}> Elije la categoría del dibujo </label>
-                <select name="input" className={'form-control'} onClick={handleSelectInput} id={`${idSelect}selectCategory`}>
+                <select name="input" className={'form-control'} onClick={handleSelectInput} data-testid={`${idSelect}selectCategory`} id={`${idSelect}selectCategory`}>
                     <option value={'abc'}> ABC </option>
                     <option value={'anime'}> Anime </option>
                     <option value={'bn'}> Blanco & Negro </option>

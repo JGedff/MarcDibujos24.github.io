@@ -6,7 +6,7 @@ export const HeaderLogo = () => {
                 <img src="./img/icon.png" alt="Logo" id="logo"/>
             </a>
 
-            <h1>Marc dibujos</h1>
+            <h1 data-testid='title'>Marc dibujos</h1>
         </div>
     )
 }

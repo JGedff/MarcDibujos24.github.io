@@ -48,10 +48,14 @@ export const SearchForm = ({ showHideForm, resetSearcher, changeImgCategory, sea
         if (doubleSearch) {
             if (searchModal === 'category' && doubleSearchModal === 'category') {
                 searchTwoCategories(category, doubleSearchCategory)
-            } else if (searchModal === 'category' && doubleSearchModal === 'title') {
+            } else if (searchModal === 'category' && doubleSearchModal === 'title' && doubleSearchTitle !== '') {
                 searchImgInCategoryByTitle(category, doubleSearchTitle)
-            } else if (searchModal === 'title' && doubleSearchModal === 'category') {
+            } else if (searchModal === 'title' && title !== '' && doubleSearchModal === 'category') {
                 searchImgInCategoryByTitle(doubleSearchCategory, title)
+            } else if (searchModal === 'category') {
+                changeImgCategory(category)
+            } else if (doubleSearchModal === 'category') {
+                changeImgCategory(doubleSearchCategory)
             } else {
                 searchImgByTwoTitles(title, doubleSearchTitle)
             }
@@ -93,7 +97,7 @@ export const SearchForm = ({ showHideForm, resetSearcher, changeImgCategory, sea
 
                     <div>
                         <label htmlFor="searchInput" className={'mt-3'} > Elije una opción </label>
-                        <select name="searchInput" className={'form-control'} onClick={changeModal} id="selectSearchModal">
+                        <select name="searchInput" className={'form-control'} onClick={changeModal} data-testid='selectSearchModal' id="selectSearchModal">
                             <option value={'category'}> Categoría </option>
                             <option value={'title'}> Titulo del dibujo </option>
                         </select>
@@ -105,7 +109,7 @@ export const SearchForm = ({ showHideForm, resetSearcher, changeImgCategory, sea
 
                     <div style={{display: doubleSearch ? 'block' : 'none'}}>
                         <label htmlFor="searchInput" className={'mt-3'} > Elije una opción </label>
-                        <select name="searchInput" className={'form-control'} onClick={changeDoubleSearchModal} id="selectDoubleSearchModal">
+                        <select name="searchInput" className={'form-control'} onClick={changeDoubleSearchModal} data-testid='selectDoubleSearchModal' id="selectDoubleSearchModal">
                             <option value={'category'}> Categoría </option>
                             <option value={'title'}> Titulo del dibujo </option>
                         </select>
@@ -115,8 +119,8 @@ export const SearchForm = ({ showHideForm, resetSearcher, changeImgCategory, sea
                         </div>
                     </div>
 
-                    <button type="submit" className={'mt-3 btn btn-info'} formAction="data-dismiss='modal'" onClick={handleSearch}> Buscar </button>
-                    <button type="submit" onClick={handleStopSearch} className={'mt-3 btn btn-danger'} formAction="data-dismiss='modal'"> Parar buscador </button>
+                    <button type="submit" data-testid='startSearch' className={'mt-3 btn btn-info'} formAction="data-dismiss='modal'" onClick={handleSearch}> Buscar </button>
+                    <button type="submit" data-testid='stopSearch' onClick={handleStopSearch} className={'mt-3 btn btn-danger'} formAction="data-dismiss='modal'"> Parar buscador </button>
                 </form>
             </div>
         </div>

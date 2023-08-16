@@ -3,14 +3,15 @@ import { Drawing } from "./Drawing"
 export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fusiones, gods, inazuma, nft, oc } }) => {
 
     const getImagesFromArray = (arrayImages = []) => {
+        
         let newArrayImages = []
-
+        
         arrayImages.forEach((img, index) => {
-            if (img !== null) {
+            if (img !== null && img !== undefined) {
                 newArrayImages.push(<Drawing key={index} title={img.title} src={img.src}></Drawing>)
             }
         })
-
+        
         return newArrayImages
     }
 
@@ -21,8 +22,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
             <div className={'pb-5'} >
 
                 {
-                    !(abc === null) ?
-                        <div>
+                    (abc !== null && abc !== undefined) ?
+                        <div data-testid='abc'>
                             <h3>Categoría ABC:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -33,8 +34,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(anime === null) ?
-                        <div>
+                    (anime !== null && anime !== undefined) ?
+                        <div data-testid='anime'>
                             <h3>Categoría Anime:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -45,8 +46,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(bn === null) ?
-                        <div>
+                    (bn !== null && bn !== undefined) ?
+                        <div data-testid='bn'>
                             <h3>Categoría Blanco & Negro:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -57,8 +58,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(dragonBall === null) ?
-                        <div>
+                    (dragonBall !== null && dragonBall !== undefined) ?
+                        <div data-testid='dragonBall'>
                             <h3>Categoría Dragon ball:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -69,8 +70,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
                 
                 {
-                    !(fondos === null) ?
-                        <div>
+                    (fondos !== null && fondos !== undefined) ?
+                        <div data-testid='fondos'>
                             <h3>Categoría Fondos:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -81,8 +82,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(fusiones === null) ?
-                        <div>
+                    (fusiones !== null && fusiones !== undefined) ?
+                        <div data-testid='fusiones'>
                             <h3>Categoría Fusiones:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -93,8 +94,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(gods === null) ?
-                        <div>
+                    (gods !== null && gods !== undefined) ?
+                        <div data-testid='gods'>
                             <h3>Categoría Gods & Goddesses:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -105,8 +106,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(inazuma === null) ?
-                        <div>
+                    (inazuma !== null && inazuma !== undefined) ?
+                        <div data-testid='inazuma'>
                             <h3>Categoría Inazuma:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -117,8 +118,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(nft === null) ?
-                        <div>
+                    (nft !== null && nft !== undefined) ?
+                        <div data-testid='nft'>
                             <h3>Categoría NFT:</h3>
                             <div className='d-flex flex-wrap'>
                                 {
@@ -129,8 +130,8 @@ export const ShowImagesModal = ({ data: { abc, anime, bn, dragonBall, fondos, fu
                 }
 
                 {
-                    !(oc === null) ?
-                        <div>
+                    (oc !== null && oc !== undefined) ?
+                        <div data-testid='oc'>
                             <h3>Categoría Personajes Originales:</h3>
                             <div className='d-flex flex-wrap'>
                                 {

@@ -13,6 +13,6 @@ export const ChooseDoubleSearch = ({ handleClick, isDoubleSearchOn }) => {
     }, [isDoubleSearchOn])
 
     return (
-        <button className="btn btn-info" onClick={handleClick}> {buttonText} </button>
+        <button data-testid='doubleSearchButton' className="btn btn-info" onClick={handleClick}> {buttonText} </button>
     )
 }

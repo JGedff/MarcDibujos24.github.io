@@ -251,8 +251,6 @@ function App() {
       newArrayImages.oc = null
     }
 
-    console.log(newArrayImages)
-
     return newArrayImages
   }
 
@@ -265,8 +263,8 @@ function App() {
   }
 
   const getImgByTwoCategories = (category1, category2) => {
-    let arrayImagesCategory1 = getCategory(category1)
-    let arrayImagesCategory2 = getCategory(category2)
+    const arrayImagesCategory1 = getCategory(category1)
+    const arrayImagesCategory2 = getCategory(category2)
     let newArrayImages = {
       initialImage: getInitialImage(),
     }
@@ -589,17 +587,16 @@ function App() {
   const getImgInBothArrays = (arrayImagesCategory1, arrayImagesCategory2) => {
     let counter = 0
     let newArrayImages = []
-
+    
     arrayImagesCategory1.forEach((imgToFind) => {
       arrayImagesCategory2.forEach((img) => {
-        newArrayImages[counter] = getArrayImagesByName(img, imgToFind.title)
-        
-        if (newArrayImages[counter] === undefined) {
-          newArrayImages[counter] = null
-          counter--
-        }
 
-        counter++
+        const image = getImageByNameAndSrc(img, imgToFind)
+        
+        if (image !== null) {
+          newArrayImages[counter] = image
+          counter++
+        }
       });
     })
 
@@ -609,6 +606,18 @@ function App() {
 
     return newArrayImages
   }
+
+  const getImageByNameAndSrc = (image, imageToFind) => {
+    let isSameImage = false
+
+    if (image.src === imageToFind.src) {
+      if (image.title === imageToFind.title) {
+        isSameImage = true
+      }
+    }
+
+    return isSameImage ? image : null
+  } 
 
   const [arrayImages, setArrayImages] = useState(getCategory('all'))
 
@@ -685,17 +694,107 @@ function App() {
       const arrayImagesTitle1 = getImgByTitle(title1.toLowerCase())
       const arrayImagesTitle2 = getImgByTitle(title2.toLowerCase())
   
-      newArrayImages.abc = arrayImagesTitle1.abc?.concat(arrayImagesTitle2.abc)
-      newArrayImages.anime = arrayImagesTitle1.anime?.concat(arrayImagesTitle2.anime)
-      newArrayImages.bn = arrayImagesTitle1.bn?.concat(arrayImagesTitle2.bn)
-      newArrayImages.dragonBall = arrayImagesTitle1.dragonBall?.concat(arrayImagesTitle2.dragonBall)
-      newArrayImages.fondos = arrayImagesTitle1.fondos?.concat(arrayImagesTitle2.fondos)
-      newArrayImages.fusiones = arrayImagesTitle1.fusiones?.concat(arrayImagesTitle2.fusiones)
-      newArrayImages.gods = arrayImagesTitle1.gods?.concat(arrayImagesTitle2.gods)
-      newArrayImages.inazuma = arrayImagesTitle1.inazuma?.concat(arrayImagesTitle2.inazuma)
-      newArrayImages.nft = arrayImagesTitle1.nft?.concat(arrayImagesTitle2.nft)
-      newArrayImages.oc = arrayImagesTitle1.oc?.concat(arrayImagesTitle2.oc)
-  
+      if (arrayImagesTitle1.abc !== null) {
+        newArrayImages.abc = arrayImagesTitle1.abc
+        
+        if (arrayImagesTitle2.abc !== null) {
+          newArrayImages.abc = newArrayImages.abc.concat(arrayImagesTitle2.abc)
+        }
+      } else if (arrayImagesTitle2.abc !== null) {
+        newArrayImages.abc = arrayImagesTitle2.abc
+      }
+      
+      if (arrayImagesTitle1.anime !== null) {
+        newArrayImages.anime = arrayImagesTitle1.anime
+        
+        if (arrayImagesTitle2.anime !== null) {
+          newArrayImages.anime = newArrayImages.anime.concat(arrayImagesTitle2.anime)
+        }
+      } else if (arrayImagesTitle2.anime !== null) {
+        newArrayImages.anime = arrayImagesTitle2.anime
+      }
+
+      if (arrayImagesTitle1.bn !== null) {
+        newArrayImages.bn = arrayImagesTitle1.bn
+        
+        if (arrayImagesTitle2.bn !== null) {
+          newArrayImages.bn = newArrayImages.bn.concat(arrayImagesTitle2.bn)
+        }
+      } else if (arrayImagesTitle2.bn !== null) {
+        newArrayImages.bn = arrayImagesTitle2.bn
+      }
+
+      if (arrayImagesTitle1.dragonBall !== null) {
+        newArrayImages.dragonBall = arrayImagesTitle1.dragonBall
+        
+        if (arrayImagesTitle2.dragonBall !== null) {
+          newArrayImages.dragonBall = newArrayImages.dragonBall.concat(arrayImagesTitle2.dragonBall)
+        }
+      } else if (arrayImagesTitle2.dragonBall !== null) {
+        newArrayImages.dragonBall = arrayImagesTitle2.dragonBall
+      }
+
+      if (arrayImagesTitle1.fondos !== null) {
+        newArrayImages.fondos = arrayImagesTitle1.fondos
+        
+        if (arrayImagesTitle2.fondos !== null) {
+          newArrayImages.fondos = newArrayImages.fondos.concat(arrayImagesTitle2.fondos)
+        }
+      } else if (arrayImagesTitle2.fondos !== null) {
+        newArrayImages.fondos = arrayImagesTitle2.fondos
+      }
+
+      if (arrayImagesTitle1.fusiones !== null) {
+        newArrayImages.fusiones = arrayImagesTitle1.fusiones
+        
+        if (arrayImagesTitle2.fusiones !== null) {
+          newArrayImages.fusiones = newArrayImages.fusiones.concat(arrayImagesTitle2.fusiones)
+        }
+      } else if (arrayImagesTitle2.fusiones !== null) {
+        newArrayImages.fusiones = arrayImagesTitle2.fusiones
+      }
+
+      if (arrayImagesTitle1.gods !== null) {
+        newArrayImages.gods = arrayImagesTitle1.gods
+        
+        if (arrayImagesTitle2.gods !== null) {
+          newArrayImages.gods = newArrayImages.gods.concat(arrayImagesTitle2.gods)
+        }
+      } else if (arrayImagesTitle2.gods !== null) {
+        newArrayImages.gods = arrayImagesTitle2.gods
+      }
+
+      if (arrayImagesTitle1.inazuma !== null) {
+        newArrayImages.inazuma = arrayImagesTitle1.inazuma
+        
+        if (arrayImagesTitle2.inazuma !== null) {
+          newArrayImages.inazuma = newArrayImages.inazuma.concat(arrayImagesTitle2.inazuma)
+        }
+      } else if (arrayImagesTitle2.inazuma !== null) {
+        newArrayImages.inazuma = arrayImagesTitle2.inazuma
+      }
+
+      if (arrayImagesTitle1.nft !== null) {
+        newArrayImages.nft = arrayImagesTitle1.nft
+        
+        if (arrayImagesTitle2.nft !== null) {
+          newArrayImages.nft = newArrayImages.nft.concat(arrayImagesTitle2.nft)
+        }
+      } else if (arrayImagesTitle2.nft !== null) {
+        newArrayImages.nft = arrayImagesTitle2.nft
+      }
+
+      if (arrayImagesTitle1.oc !== null) {
+        newArrayImages.oc = arrayImagesTitle1.oc
+        
+        if (arrayImagesTitle2.oc !== null) {
+          newArrayImages.oc = newArrayImages.oc.concat(arrayImagesTitle2.oc)
+          console.log(newArrayImages.oc)
+        }
+      } else if (arrayImagesTitle2.oc !== null) {
+        newArrayImages.oc = arrayImagesTitle2.oc
+      }
+
       return newArrayImages
     } else {
       const newArrayImages = getImgByTitle(title1.toLowerCase())
@@ -713,70 +812,119 @@ function App() {
   const getImgByCategoryAndTitle = (category, title) => {
     const allImages = getCategory('all')
 
-    let counter = 0
     let newArrayImages = {
       initialImage: getInitialImage(),
     }
 
     switch (category) {
       case 'abc':
+        newArrayImages.abc = []
+        
         allImages.abc.forEach(img => {
-          newArrayImages.abc[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.abc.push(newImage)
+          }
         });
         break;
       case 'anime':
+        newArrayImages.anime = []
+        
         allImages.anime.forEach(img => {
-          newArrayImages.anime[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.anime.push(newImage)
+          }
         });
         break;
       case 'bn':
+        newArrayImages.bn = []
+        
         allImages.bn.forEach(img => {
-          newArrayImages.bn[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.bn.push(newImage)
+          }
         });
         break;
       case 'dragonBall':
+        newArrayImages.dragonBall = []
+        
         allImages.dragonBall.forEach(img => {
-          newArrayImages.dragonBall[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.dragonBall.push(newImage)
+          }
         });
         break;
       case 'fondos':
+        newArrayImages.fondos = []
+        
         allImages.fondos.forEach(img => {
-          newArrayImages.fondos[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.fondos.push(newImage)
+          }
         });
         break;
       case 'fusiones':
+        newArrayImages.fusiones = []
+        
         allImages.fusiones.forEach(img => {
-          newArrayImages.fusiones[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.fusiones.push(newImage)
+          }
         });
         break;
       case 'gods':
+        newArrayImages.gods = []
+        
         allImages.gods.forEach(img => {
-          newArrayImages.gods[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.gods.push(newImage)
+          }
         });
         break;
       case 'inazuma':
+        newArrayImages.inazuma = []
+        
         allImages.inazuma.forEach(img => {
-          newArrayImages.inazuma[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.inazuma.push(newImage)
+          }
         });
         break;
       case 'nft':
+        newArrayImages.nft = []
+
         allImages.nft.forEach(img => {
-          newArrayImages.nft[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+          
+          if (newImage !== undefined) {
+            newArrayImages.nft.push(newImage)
+          }
         });
         break;
       case 'oc':
+        newArrayImages.oc = []
+        
         allImages.oc.forEach(img => {
-          newArrayImages.oc[counter] = getArrayImagesByName(img, title)
-          counter++
+          const newImage = getArrayImagesByName(img, title)
+
+          if (newImage !== undefined) {
+            newArrayImages.oc.push(newImage)
+          }
         });
         break;
     }

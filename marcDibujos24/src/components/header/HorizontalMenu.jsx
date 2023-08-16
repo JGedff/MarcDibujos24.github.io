@@ -15,17 +15,17 @@ export const HorizontalMenu = ({
     return (
         <div id="horzontalMenu">
             <ul className={'d-flex mt-5 justify-content-around p-0'} >
-                <li> <a href="#images" className={'rounded'} onClick={handleClick} > Inicio </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showAbc}> ABC </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showAnime}> Anime </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showBn}> Blanco & Negro </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showDragonBall}> Dragon ball </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showFondos}> Fondos </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showFusiones}> Fusiones </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showGods}> Gods & Goddesses </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showInazuma}> Inazuma </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showNft}> NFT </a> </li>
-                <li> <a href="#images" className={'rounded'} onClick={showOc}> Personages Originales </a> </li>
+                <li> <button data-testid='home' className={'rounded'} onClick={handleClick} > Inicio </button> </li>
+                <li> <button data-testid='categoryAbc' className={'rounded'} onClick={showAbc}> ABC </button> </li>
+                <li> <button data-testid='categoryAnime' className={'rounded'} onClick={showAnime}> Anime </button> </li>
+                <li> <button data-testid='categoryBn' className={'rounded'} onClick={showBn}> Blanco & Negro </button> </li>
+                <li> <button data-testid='categoryDragonBall' className={'rounded'} onClick={showDragonBall}> Dragon ball </button> </li>
+                <li> <button data-testid='categoryFondos' className={'rounded'} onClick={showFondos}> Fondos </button> </li>
+                <li> <button data-testid='categoryFusiones' className={'rounded'} onClick={showFusiones}> Fusiones </button> </li>
+                <li> <button data-testid='categoryGods' className={'rounded'} onClick={showGods}> Gods & Goddesses </button> </li>
+                <li> <button data-testid='categoryInazuma' className={'rounded'} onClick={showInazuma}> Inazuma </button> </li>
+                <li> <button data-testid='categoryNft' className={'rounded'} onClick={showNft}> NFT </button> </li>
+                <li> <button data-testid='categoryOc' className={'rounded'} onClick={showOc}> Personages Originales </button> </li>
             </ul>
         </div>
     )
